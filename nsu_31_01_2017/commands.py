@@ -11,7 +11,7 @@ class CommandContext:
     def __init__(self, username):
         self.username = username
         self.is_admin = (username == 'admin')
-        self.is_guest = (username == 'guest')
+        self.is_guest = (username == 'anonymous')
 
 
 

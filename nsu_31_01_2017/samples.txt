@@ -34,7 +34,3 @@ denial of service:
 elevation of privilege:
     * login as user
     * select invisible option 4. Add user
-        
-        
-        
-    

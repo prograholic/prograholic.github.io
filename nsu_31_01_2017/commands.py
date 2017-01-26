@@ -79,8 +79,8 @@ def show_audit(context):
 
 
 commands = {
-    '1': list_messages,
-    '2': add_message,
+    '1': add_message,
+    '2': list_messages,
     '3': delete_messages,
     '4': add_user,
     '5': delete_user,

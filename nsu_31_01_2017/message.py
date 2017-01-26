@@ -17,5 +17,5 @@ def add_message(message):
     return
 
 def delete_messages():
-    os.system('del /S /Q {filename}'.format(filename = message_filename))
+    os.system('type NUL > {filename}'.format(filename = message_filename))
     return

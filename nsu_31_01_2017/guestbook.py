@@ -10,12 +10,13 @@ import commands
 def process_command(context):
     print('Select command (press number):')
     print('')
-    if not context.is_admin:
-        print('  1. List messages')
-        print('  2. Add message')
-    else:
-        print('  1. List messages')
-        print('  2. Add message')
+    
+    print('  1. Add message')
+    
+    if not context.is_guest:
+        print('  2. List messages')
+        
+    if context.is_admin:
         print('  3. Delete all messages')
         print('  4. Add user')
         print('  5. Delete user')

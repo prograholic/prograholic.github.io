@@ -1,0 +1,62 @@
+?Bar@@YAHXZ:
+  00406A30: B8 2A 00 00 00     mov         eax,2Ah
+  00406A35: C3                 ret
+
+?Foo@@YAXXZ:
+  00406A40: 51                 push        ecx
+  00406A41: 68 38 E3 45 00     push        offset __TI1H
+  00406A46: 8D 44 24 04        lea         eax,[esp+4]
+  00406A4A: C7 44 24 04 2A 00  mov         dword ptr [esp+4],2Ah
+            00 00
+  00406A52: 50                 push        eax
+  00406A53: E8 A3 CD FF FF     call        @ILT+10230(__CxxThrowException@8)
+  00406A58: CC                 int         3
+  
+
+__CxxThrowException@8:
+  00407E0A: 55                 push        ebp
+  00407E0B: 8B EC              mov         ebp,esp
+  00407E0D: 83 EC 20           sub         esp,20h
+  00407E10: 53                 push        ebx
+  00407E11: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00407E14: 56                 push        esi
+  00407E15: 57                 push        edi
+  00407E16: 6A 08              push        8
+  00407E18: 59                 pop         ecx
+  00407E19: BE 68 4E 45 00     mov         esi,454E68h
+  00407E1E: 8D 7D E0           lea         edi,[ebp-20h]
+  00407E21: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  00407E23: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00407E26: 85 FF              test        edi,edi
+  00407E28: 74 1C              je          00407E46
+  00407E2A: F6 07 10           test        byte ptr [edi],10h
+  00407E2D: 74 17              je          00407E46
+  00407E2F: 8B 0B              mov         ecx,dword ptr [ebx]
+  00407E31: 83 E9 04           sub         ecx,4
+  00407E34: 51                 push        ecx
+  00407E35: 8B 01              mov         eax,dword ptr [ecx]
+  00407E37: 8B 70 20           mov         esi,dword ptr [eax+20h]
+  00407E3A: 8B CE              mov         ecx,esi
+  00407E3C: 8B 78 18           mov         edi,dword ptr [eax+18h]
+  00407E3F: E8 69 B7 FF FF     call        @ILT+9640(@_guard_check_icall@4)
+  00407E44: FF D6              call        esi
+  00407E46: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00407E49: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00407E4C: 85 FF              test        edi,edi
+  00407E4E: 74 0C              je          00407E5C
+  00407E50: F6 07 08           test        byte ptr [edi],8
+  00407E53: 74 07              je          00407E5C
+  00407E55: C7 45 F4 00 40 99  mov         dword ptr [ebp-0Ch],1994000h
+            01
+  00407E5C: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00407E5F: 50                 push        eax
+  00407E60: FF 75 F0           push        dword ptr [ebp-10h]
+  00407E63: FF 75 E4           push        dword ptr [ebp-1Ch]
+  00407E66: FF 75 E0           push        dword ptr [ebp-20h]
+  00407E69: FF 15 34 20 46 00  call        dword ptr [__imp__RaiseException@16]
+  00407E6F: 5F                 pop         edi
+  00407E70: 5E                 pop         esi
+  00407E71: 5B                 pop         ebx
+  00407E72: 8B E5              mov         esp,ebp
+  00407E74: 5D                 pop         ebp
+  00407E75: C2 08 00           ret         8

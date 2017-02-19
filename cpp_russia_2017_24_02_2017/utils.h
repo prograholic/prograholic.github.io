@@ -3,13 +3,13 @@
 #include <type_traits>
 #include <new>
 
-
-struct exception_support : 
 #if defined (_CPPUNWIND)
-    std::true_type
+    #define NESTL_HAS_EXCEPTIONS 1
 #else
-    std::false_type
+    #define NESTL_HAS_EXCEPTIONS 0
 #endif
+
+struct exception_support : std::integral_constant<bool, NESTL_HAS_EXCEPTIONS == 1>
 {
 };
 
